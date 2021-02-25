@@ -5,13 +5,26 @@ function App() {
     const products =[
         {name:'Illustrator', price:'$60.99'},
         {name:'PhotoShop', price:'$90.99'},
-        {name:'PDF Reader', price:'$6.99'}
+        {name:'PDF Reader', price:'$6.99'},
+        {name:'PDF EI', price:'$24.99'}
     ]
+    // const productNames = products.map(product => product.name)
+    // const productPrices = products.map(product => product.price)
+    // console.log(productNames)
     return ( <div className = "App" >
         <header className = "App-header" >
         <img src = { logo }
         className = "App-logo"
         alt = "logo" / >
+            <ul>
+                {
+                  products.map(product => <li>{product.name}</li>)  
+                }
+            </ul>
+            {
+                products.map(pd=> <Product product={pd}></Product>)
+            }
+            
         <p >
         Edit < code > src / App.js </code> and save to reload. </p>
         <Product product={products[0]} ></Product>
@@ -54,8 +67,8 @@ function Person() {
         border: '2px solid red',
         margin: '10px'
     }
-    return ( <div>
-        <h3 > Hi </h3> 
+    return ( <div style={personStyle}>
+        <h3 > Hiiiii </h3> 
         </div >
     )
 }
